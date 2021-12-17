@@ -11,9 +11,9 @@ body{
     margin: 0 auto;
     padding: 30px 0;
 }
-h1{
+.game{
     text-align: center;
-    margin-bottom: 100px;
+    margin: 100px 0;
     color: green;
 }
 .buttons{
@@ -29,13 +29,24 @@ h1{
     font-weight: bold;
     color: darkgreen;
 }
+.game-btn:hover{
+    background: darkgreen;
+    color: yellow;
+}
 .result{
+    display: inline-block;
     font-size: xxx-large;
     font-weight: bold;
     color: red;
+    margin-bottom: 10px;
 }
 .rock{
     text-align: center;
+}
+.rock-title{
+    text-align: center;
+    margin-bottom: 15px;
+    color: darkgreen;
 }
 .rock-buttons{
     display: flex;
@@ -61,7 +72,7 @@ h1{
     margin-right: 0;
 }
 .rock-box{
-    height: calc(100vh - 270px);
+    height: calc(100vh - 350px);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -75,7 +86,6 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    object-fit: contain;
     margin: 0 -15px;
 }
 .col-6{
@@ -94,4 +104,60 @@ h1{
 }
 .clean-btn:hover{
     background: darkgreen;
+}
+/*------------------------------------------------------------------------------------------------------*/
+.guess{
+    padding: 100px 0 0;
+    text-align: center;
+}
+.lives{
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: x-large;
+    color: red;
+}
+.won-lost{
+    text-align: left;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.guess-input{
+    width: 100px;
+    height: 100px;
+    font-size: xx-large;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 50px 50px 0;
+    background: bisque;
+}
+
+.guess-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 50px;
+}
+.guess-btn:hover{
+    padding: 10px 20px;
+    background: aquamarine;
+    border: none;
+    border-radius: 4px;
+    color: darkgreen;
+    font-weight: bold;
+}
+.guess-checkbox{
+    margin-right: 10px;
+}
+.guess-help-text{
+color: crimson;
+}
+.clear-all{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background: crimson;
+    color: yellow;
+    font-weight: bold;
 }

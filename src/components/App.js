@@ -10,9 +10,9 @@ const App = () => {
             {
                 !game && <div className="menu">
                     <div>
-                        <h1>CHOOSE GAME</h1>
+                        <h1 className="game">CHOOSE GAME</h1>
                         <div className="buttons">
-                            <button className="game-btn" onClick={() => setGame(1)} type="button">Rock, Scissors, Paper</button>
+                            <button className="game-btn" onClick={() => setGame(1)} type="button">Rock * Scissors * Paper</button>
                         </div>
 
                         <div className="buttons">

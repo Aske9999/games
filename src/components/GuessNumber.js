@@ -13,22 +13,22 @@ const GuessNumber = () => {
 
     const guessing = () => {
         if (guess === +num) {
-            setResult('YOU WON')
+            setResult('YOU WON!')
             setNum('')
             setWonScore(wonScore + 1)
             setTryAgain(0)
             localStorage.setItem('won', String(wonScore + 1))
         } else {
             if (tryAgain - 1 === 0) {
-                setResult('YOU LOST')
+                setResult('YOU LOST!')
                 setLostScore(lostScore + 1)
                 localStorage.setItem('lost', String(lostScore + 1))
 
             } else {
                 if (help){
-                    setHelp(num > guess ? 'up' : 'down')
+                    setHelp(num > guess ? 'UP' : 'DOWN')
                 }
-                setResult('TRY AGAIN')
+                setResult('TRY AGAIN!')
             }
             setTryAgain(tryAgain - 1)
 
@@ -62,22 +62,21 @@ const GuessNumber = () => {
 
     return (
         <div className="guess">
-            <input value={num} onChange={guessingNum} type="number"/>
-            {!!tryAgain && <button disabled={!num} onClick={guessing}>GUESS</button>}
-            {!tryAgain && <button onClick={playAgain}>RESTART</button>}
-            <label htmlFor="">
-                <input onChange={needHelp} type="checkbox"/>
-                 I need help
-            </label>
-
-            <hr/>
-            <div>{help}</div>
-            <hr/>
-            <span>LIVES: {tryAgain}</span>
+            <span className="lives">LIVES: {tryAgain}</span>
+            <div className="won-lost">Won: {wonScore}</div>
+            <div className="won-lost">Lost: {lostScore}</div>
+            <div className="guess-box">
+                <input className="guess-input" value={num} onChange={guessingNum} type="number"/>
+                {!!tryAgain && <button className="guess-btn" disabled={!num} onClick={guessing}>GUESS</button>}
+                {!tryAgain && <button className="guess-btn" onClick={playAgain}>RESTART</button>}
+                <label className="guess-help-text" htmlFor="">
+                    <input className="guess-checkbox" onChange={needHelp} type="checkbox"/>
+                    I need help
+                </label>
+                <div>{help}</div>
+            </div>
             <div className="result">{result}</div>
-            <div>Won: {wonScore}</div>
-            <div>Lost: {lostScore}</div>
-            <button onClick={clearAll}>CLEAR ALL</button>
+            <div><button className="clear-all" onClick={clearAll}>CLEAR ALL</button></div>
         </div>
     )
 }

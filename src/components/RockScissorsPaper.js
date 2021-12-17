@@ -41,19 +41,17 @@ const RockScissorsPaper = () => {
         setCompStr(images[compAction])
     }
 
-    const cleanScore = () => {
+    const cleanAll = () => {
         localStorage.clear()
         setPlayerScore("")
         setCompScore("")
+        setResult("")
     }
 
 
     return (
         <div className="rock">
-            <div className="result">
-                <span className="result">{result}</span>
-            </div>
-
+            <h1 className="rock-title">ROCK * SCISSORS * PAPER</h1>
             <div className="rock-box">
                 <div className="row">
                     <div className="col-6">Player: {playerScore}
@@ -68,12 +66,15 @@ const RockScissorsPaper = () => {
                     </div>
                 </div>
             </div>
+            <div>
+                <span className="result">{result}</span>
+            </div>
             <div className="rock-buttons">
                 <button className="rock-btn" onClick={() => playerClick('Rock')} type="button">Rock</button>
                 <button className="rock-btn" onClick={() => playerClick('Scissors')} type="button">Scissors</button>
                 <button className="rock-btn" onClick={() => playerClick('Paper')} type="button">Paper</button>
             </div>
-            <button className="clean-btn" onClick={cleanScore}>CLEAN SCORE</button>
+            <button className="clean-btn" onClick={cleanAll}>CLEAN SCORE</button>
         </div>
     )
 }
