@@ -25,9 +25,9 @@ const RockScissorsPaper = () => {
         if (playerAction === compAction) {
             setResult('DRAW!')
         } else if (
-            playerAction === 'Rock' && compAction === 'Scissors' ||
-            playerAction === 'Paper' && compAction === 'Rock' ||
-            playerAction === 'Scissors' && compAction === 'Paper'
+            (playerAction === 'Rock' && compAction === 'Scissors') ||
+            (playerAction === 'Paper' && compAction === 'Rock') ||
+                (playerAction === 'Scissors' && compAction === 'Paper')
         ) {
             setResult('YOU WON!')
             setPlayerScore(playerScore + 1)
